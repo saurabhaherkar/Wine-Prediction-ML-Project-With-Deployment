@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Prediction</title>
+    <style>
+        body {
+        background-color: #FFFF99;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;;
+        }
+        div.form{
+        box-shadow: 2px 2px 30px #1a1a1a;
+        width: 45vw;
+        background-color: #bfbfbf;
+        text-align: center;
+        border-left-color: #a6a6a6;
+        }
+        form{
+        border-left-style: solid;
+        border-color: #ffff00;
+        border-left-width: 5px;
+        padding: 15px;
+        }
+        input[type=text]{
+        text-align: center;
+        width: 200px;
+        height: 30px;
+        border: 0px;
+        }
+        input[type=submit]{
+        background-color: #ffff00;
+        width: 90px;
+        height: 30px;
+        border: 0px;
+        }
+        input[type=submit]:hover{
+        opacity: 0.8;
+        box-shadow: 2px 4px 20px #666666;
+        }
+        #h1{
+        color: #170909;
+        text-align: center;
+        }
+    </style>
+</head>
+<body class="body">
+    <center>
+        <div class="form">
+            <h1>Wine Prediction System - ML Project</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type="text" name="alcohol" placeholder="Alcohol" required><br><br>
+                <input type="text" name="malic_acid" placeholder="Malic Acid" required><br><br>
+                <input type="text" name="ash" placeholder="Ash" required><br><br>
+                <input type="text" name="alcalinity_of_ash" placeholder="Alcalinity of Ash" required><br><br>
+                <input type="text" name="magnesium" placeholder="Magnesium" required><br><br>
+                <input type="text" name="total_phenols" placeholder="Total Phenols" required><br><br>
+                <input type="text" name="flavanoid" placeholder="Flavanoid" required><br><br>
+                <input type="text" name="nonflavanoid_phenols" placeholder="Non-Flavanoid Phenols" required><br><br>
+                <input type="text" name="proanthocyanins" placeholder="Proanthocyanins" required><br><br>
+                <input type="text" name="color_intensity" placeholder="Color Intensity" required><br><br>
+                <input type="text" name="hue" placeholder="Hue" required><br><br>
+                <input type="text" name="od280/od315_of_diluted_wine" placeholder="od280/od315 of Diluted Wine" required><br><br>
+                <input type="text" name="proline" placeholder="Proline" required><br><br>
+                <input type="submit" value="Predict">
+            </form>
+        </div>
+    </center>
+    <div>
+        <center><h1 id="h1">{{ prediction_text }}</h1></center>
+    </div>
+</body>
+</html>
